@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="Study Life Hacks helps students study smarter with deep focus techniques, calm productivity habits, long-form study blogs, and aesthetic learning systems designed for modern students".>
+
+  <!-- INTERNAL / LOCAL WEBSITE CONFIG -->
+  <!-- Works fully offline, open directly in Google Chrome -->
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="description" content="Study Life Hacks – a premium internal study experience focused on deep focus, calm productivity, and intelligent learning.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E📘%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Life Hacks</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600&family=Inter:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --glass: rgba(255, 255, 255, 0.08);
+      --text-main: #ffffff;
+      --text-muted: rgba(255,255,255,0.6);
+      --accent-lavender: #c3b7e2;
+      --accent-beige: #e6dccb;
+      --accent-blue: #9bb7d4;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* Progress Bar */
+    #progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-lavender), var(--accent-blue));
+      width: 0%;
+      z-index: 2000;
+    }
+
+    /* Cursor Glow */
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(195,183,226,0.25);
+      pointer-events: none;
+      filter: blur(10px);
+      transform: translate(-50%, -50%);
+      z-index: 3000;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 16px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(16px);
+      background: var(--glass);
+      z-index: 1000;
+    }
+
+    nav .logo { font-family:'Allura', cursive; font-size:28px; color:var(--accent-lavender); }
+    nav ul { list-style:none; display:flex; gap:32px; }
+    nav ul li { cursor:pointer; font-size:14px; letter-spacing:1px; color:var(--text-muted); }
+    nav ul li:hover { color:var(--accent-beige); }
+
+    section { padding: 140px 10vw; }
+
+    .hero {
+      height: 100vh;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      background: linear-gradient(rgba(15,17,21,0.6), rgba(15,17,21,0.95)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover fixed;
+    }
+
+    .hero h1 {
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      font-size:clamp(70px,12vw,140px);
+      letter-spacing:10px;
+    }
+
+    .site-name { font-family:'Allura', cursive; font-size:44px; color:var(--accent-lavender); margin-top:20px; }
+
+    .section-title {
+      font-family:'Playfair Display', serif;
+      font-size:52px;
+      margin-bottom:40px;
+    }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:40px;
+    }
+
+    .card {
+      background:rgba(255,255,255,0.05);
+      padding:36px;
+      border-radius:24px;
+      backdrop-filter:blur(14px);
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 0.8s ease;
+    }
+
+    .card.visible { opacity:1; transform:translateY(0); }
+
+    .card h3 { font-family:'Playfair Display', serif; margin-bottom:16px; }
+    .card p { font-size:14px; line-height:1.9; color:var(--text-muted); }
+
+    img { transition: transform 8s ease; }
+    img.parallax { transform: scale(1.1); }
+
+    footer {
+      padding:100px;
+      text-align:center;
+      color:var(--text-muted);
+      font-size:13px;
+      letter-spacing:1px;
+      background:linear-gradient(transparent, rgba(0,0,0,0.6));
+    }
+
+    @media(max-width:768px){
+      nav{padding:16px 24px;}
+      .section-title{font-size:40px;}
+    }
+  </style>
+</head>
+<body class="internal">
+<div id="progress"></div>
+<div class="cursor"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Study Life Hacks</div>
+    <ul>
+      <li onclick="scrollToSection('home')">HOME</li>
+      <li onclick="scrollToSection('hacks')">HACKS</li>
+      <li onclick="scrollToSection('focus')">FOCUS</li>
+      <li onclick="scrollToSection('about')">ABOUT</li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div>
+      <h1>WELCOME</h1>
+      <div class="site-name">Study Life Hacks</div>
+    </div>
+
+    <div class="floating-quotes">
+      <div class="quote">"Study smart, live better"</div>
+      <div class="quote">"Consistency beats talent"</div>
+      <div class="quote">"Your future self will thank you"</div>
+    </div>
+  </section>
+
+  <!-- HACKS -->
+  <section id="hacks">
+    <div class="section-title">Study Hacks</div>
+    <div class="cards">
+      <div class="card">
+        <h3>Active Recall</h3>
+        <p>Train your brain by testing yourself instead of rereading. This builds strong memory pathways.</p>
+      </div>
+      <div class="card">
+        <h3>Spaced Repetition</h3>
+        <p>Review topics at increasing intervals to lock information into long-term memory.</p>
+      </div>
+      <div class="card">
+        <h3>Time Blocking</h3>
+        <p>Schedule focused study blocks and protect them like important meetings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section id="focus">
+    <div class="section-title">Deep Focus</div>
+    <div class="cards">
+      <div class="card">
+        <h3>Digital Minimalism</h3>
+        <p>Reduce notifications and distractions to reclaim your attention.</p>
+      </div>
+      <div class="card">
+        <h3>Pomodoro Flow</h3>
+        <p>Short, intense work sessions followed by deliberate rest.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title">About Study Life Hacks</div>
+    <p style="max-width: 700px; color: var(--text-muted); line-height: 1.8;">
+      Study Life Hacks is a premium student platform designed to help learners study smarter, stay focused, and build a calm, productive academic life. Inspired by modern EdTech and minimalist design philosophies.
+    </p>
+  </section>
+
+  <!-- BLOGS -->
+  <section id="blogs">
+    <div class="section-title">Long-Form Blogs</div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>The Art of Studying Deeply</h3>
+        <p>
+          Studying is not about how many hours you sit with books open. It is about how deeply your mind connects with the material. Deep study requires intention, silence, and patience. In a world full of noise, choosing to focus is a powerful skill. When you study deeply, concepts stop feeling like information and start becoming understanding.
+        </p>
+        <p>
+          Create a calm environment. Dim lights, a clean desk, and soft background silence can dramatically improve your focus. Remove digital distractions and allow your brain to slow down. Learning happens best when the mind feels safe and unhurried.
+        </p>
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="study" style="width:100%; border-radius:16px; margin-top:20px;">
+      </div>
+
+      <div class="card">
+        <h3>Building a Sustainable Study Routine</h3>
+        <p>
+          Consistency beats intensity every single time. A sustainable routine is one that fits naturally into your life. Instead of forcing unrealistic schedules, design a rhythm that respects your energy levels. Morning sessions may work better for some, while late-night calm suits others.
+        </p>
+        <p>
+          Start small. Even thirty minutes of focused work daily compounds into massive progress over time. Trust the process. Your brain adapts to what you repeatedly ask of it.
+        </p>
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="routine" style="width:100%; border-radius:16px; margin-top:20px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section id="lifestyle">
+    <div class="section-title">Study Lifestyle</div>
+    <p style="max-width:900px; color: var(--text-muted); line-height:1.9; font-size:15px;">
+      A productive student life is not built on burnout. It is built on balance. Sleep, nutrition, movement, and mental rest are not optional—they are foundational. When you take care of your body, your mind follows naturally.
+      <br><br>
+      Romanticize the process of learning. A cup of tea before studying, aesthetic notes, slow mornings, and reflective evenings create emotional attachment to growth. When learning feels beautiful, it becomes effortless.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6" alt="lifestyle" style="width:100%; margin-top:40px; border-radius:24px;">
+  </section>
+
+  <!-- INSPIRATION -->
+  <section id="inspiration">
+    <div class="section-title">Quiet Motivation</div>
+    <div class="cards">
+      <div class="card">
+        <p style="font-style:italic;">
+          "You do not need to rush. You only need to keep going."
+        </p>
+      </div>
+      <div class="card">
+        <p style="font-style:italic;">
+          "Small efforts, repeated daily, create extraordinary lives."
+        </p>
+      </div>
+      <div class="card">
+        <p style="font-style:italic;">
+          "Focus is a form of self-respect."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Study Life Hacks · Designed for students, by students
+  </footer>
+
+  <script>
+    function scrollToSection(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+
+    /* Progress Bar */
+    window.addEventListener('scroll',()=>{
+      const scrollTop=document.documentElement.scrollTop;
+      const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      document.getElementById('progress').style.width=(scrollTop/height)*100+'%';
+    });
+
+    /* Cursor Glow */
+    const cursor=document.querySelector('.cursor');
+    document.addEventListener('mousemove',e=>{
+      cursor.style.left=e.clientX+'px';
+      cursor.style.top=e.clientY+'px';
+    });
+
+    /* Scroll Reveal */
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('visible'); }});
+    },{threshold:0.2});
+
+    document.querySelectorAll('.card').forEach(card=>observer.observe(card));
+
+    /* Parallax Images */
+    window.addEventListener('scroll',()=>{
+      document.querySelectorAll('img').forEach(img=>{
+        const rect=img.getBoundingClientRect();
+        if(rect.top<window.innerHeight){ img.classList.add('parallax'); }
+      });
+    });
+  </script>
+
+</body>
+</html>
