@@ -155,7 +155,27 @@
     }
   </style>
 </head>
-<body class="internal">
+<body class="internal"> <style>
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  animation: fadeIn 1.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 <div id="progress"></div>
 <div class="cursor"></div>
 
@@ -329,5 +349,6 @@
 
 </body>
 </html>
+
 
 
