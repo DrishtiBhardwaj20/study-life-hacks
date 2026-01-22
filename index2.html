@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FIZZORA™ | Ultra‑Premium 3D Beverage Experience</title>
+<meta name="description" content="FIZZORA is a legendary ultra‑premium 3D beverage website built to sell, scale, and dominate. Cinematic design, enterprise content, and conversion‑driven structure." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(circle at top,#141a2e,#05060a 80%);color:#fff;overflow-x:hidden}
+
+/* GLOBAL */
+section{padding:150px 100px}
+.title{font-size:64px;font-weight:900;text-align:center;margin-bottom:24px}
+.sub{max-width:900px;margin:0 auto 90px;text-align:center;font-size:20px;line-height:1.9;opacity:.85}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;padding:20px 80px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,12,20,.55);backdrop-filter:blur(20px);z-index:1000}
+nav h1{font-size:22px;font-weight:900;letter-spacing:6px}
+nav a{margin-left:30px;text-decoration:none;color:#fff;font-size:14px;opacity:.7}
+nav a:hover{opacity:1}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:80px}
+.hero h2{font-size:86px;line-height:1.02;margin-bottom:32px}
+.hero p{font-size:20px;opacity:.9;line-height:1.9;margin-bottom:50px}
+.btn{padding:18px 56px;border-radius:50px;border:none;font-weight:900;cursor:pointer}
+.primary{background:linear-gradient(135deg,#caa45a,#f8e8b0);color:#111;box-shadow:0 30px 90px rgba(202,164,90,.55)}
+.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);margin-left:16px}
+
+/* 3D BOTTLE */
+.scene{perspective:2200px}
+.bottle{width:300px;height:680px;position:relative;transform-style:preserve-3d;transition:.1s}
+.bottle-body{position:absolute;width:300px;height:680px;border-radius:150px 150px 70px 70px;background:linear-gradient(180deg,#ff1744,#9c1339);box-shadow:inset 0 0 80px rgba(255,255,255,.4),0 90px 220px rgba(0,0,0,.95)}
+.cap{position:absolute;top:-80px;left:100px;width:100px;height:80px;background:#111;border-radius:30px}
+.label{position:absolute;top:280px;left:55px;width:190px;height:120px;background:#fff;color:#111;border-radius:28px;display:flex;align-items:center;justify-content:center;font-weight:900;letter-spacing:6px;font-size:32px}
+.liquid{position:absolute;bottom:0;width:100%;height:70%;background:rgba(255,255,255,.18);border-radius:0 0 70px 70px;animation:liquid 6s infinite ease-in-out}
+@keyframes liquid{50%{height:75%}}
+.glow{position:absolute;inset:-60px;background:radial-gradient(circle,rgba(255,255,255,.4),transparent 65%);filter:blur(50px);z-index:-1}
+
+/* SECTIONS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:50px}
+.card{padding:60px;border-radius:40px;background:rgba(255,255,255,.06);backdrop-filter:blur(18px);transition:.6s}
+.card:hover{transform:translateY(-26px) scale(1.05)}
+
+/* TIMELINE */
+.timeline{max-width:900px;margin:0 auto}
+.step{margin-bottom:60px}
+.step h3{font-size:28px;margin-bottom:12px}
+.step p{opacity:.85;line-height:1.9}
+
+/* STATS */
+.stats{display:flex;justify-content:space-around;text-align:center}
+.stats h3{font-size:56px}
+.stats p{opacity:.7}
+
+/* PRICING */
+.price{font-size:52px;font-weight:900;margin:18px 0}
+.badge{display:inline-block;padding:8px 18px;border-radius:30px;background:rgba(255,255,255,.18);font-size:12px;margin-bottom:18px}
+
+/* FOOTER */
+footer{padding:90px;text-align:center;font-size:14px;opacity:.6}
+
+/* BUBBLES */
+.bubble{position:fixed;bottom:-200px;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18);animation:float linear infinite}
+@keyframes float{to{transform:translateY(-200vh)}}
+
+@media(max-width:900px){section{padding:120px 40px}.hero{grid-template-columns:1fr;text-align:center}.stats{flex-direction:column;gap:40px}}
+</style>
+</head>
+<body>
+
+<nav>
+<h1>FIZZORA</h1>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#process">Process</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div>
+<h2>Legendary<br>3D Beverage<br>Website</h2>
+<p>A cinematic, ultra‑premium, conversion‑driven 3D website engineered to sell beverage brands at enterprise level. This is not design — this is domination.</p>
+<button class="btn primary">Book Demo</button>
+<button class="btn secondary">View Experience</button>
+</div>
+<div class="scene">
+<div class="bottle" id="bottle">
+<div class="glow"></div>
+<div class="cap"></div>
+<div class="bottle-body" id="body"><div class="liquid"></div></div>
+<div class="label" id="label">RUBY</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<h2 class="title">A Brand That Feels Billion‑Dollar</h2>
+<p class="sub">FIZZORA is built to psychologically position your product as premium. Every animation, shadow, and interaction is designed to increase perceived value and trust.</p>
+<div class="stats">
+<div><h3>+312%</h3><p>Engagement</p></div>
+<div><h3>4.8x</h3><p>Brand Recall</p></div>
+<div><h3>2.6x</h3><p>Conversion</p></div>
+</div>
+</section>
+
+<section id="experience">
+<h2 class="title">Interactive 3D Experience</h2>
+<p class="sub">Mouse‑based tilt, mobile gyroscope, dynamic lighting, liquid animation, sound feedback — engineered to mesmerize.</p>
+<div class="grid">
+<div class="card">🎮 Real‑Time 3D Interaction</div>
+<div class="card">📱 Mobile Motion Support</div>
+<div class="card">🔊 Sound‑Enhanced Feedback</div>
+</div>
+</section>
+
+<section id="process">
+<h2 class="title">From Idea to Impact</h2>
+<p class="sub">Clients don’t buy code — they buy outcomes.</p>
+<div class="timeline">
+<div class="step"><h3>01 — Brand Strategy</h3><p>Luxury positioning, target psychology, premium storytelling.</p></div>
+<div class="step"><h3>02 — 3D Experience Design</h3><p>Motion, interaction, and cinematic visuals.</p></div>
+<div class="step"><h3>03 — Conversion Architecture</h3><p>Sales‑focused layout and trust building.</p></div>
+<div class="step"><h3>04 — Launch & Scale</h3><p>Deploy, pitch, close high‑ticket clients.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2 class="title">Investment</h2>
+<p class="sub">This is positioned as a premium digital asset.</p>
+<div class="grid">
+<div class="card"><span class="badge">Starter</span><h3>Luxury Launch</h3><div class="price">₹59,999</div><p>Hero + 3D</p></div>
+<div class="card"><span class="badge">Most Chosen</span><h3>Business Pro</h3><div class="price">₹1,49,999</div><p>Full website + 3D</p></div>
+<div class="card"><span class="badge">Enterprise</span><h3>Global Brand</h3><div class="price">₹3,99,999</div><p>Customization + Scale</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="title">Let’s Build Your Brand</h2>
+<p class="sub">This demo already sells. Customize and deploy.</p>
+<div class="grid">
+<div class="card">📩 Contact Sales</div>
+<div class="card">📄 Download Proposal</div>
+<div class="card">🚀 Launch Project</div>
+</div>
+</section>
+
+<footer>© 2026 FIZZORA™ · Ultra‑Premium 3D Web Experience</footer>
+
+<audio id="fizz" src="https://assets.mixkit.co/sfx/preview/mixkit-bottle-pop-1534.mp3"></audio>
+
+<script>
+const bottle=document.getElementById('bottle'),body=document.getElementById('body'),label=document.getElementById('label'),fizz=document.getElementById('fizz');
+document.addEventListener('mousemove',e=>{const x=(window.innerWidth/2-e.clientX)/18,y=(window.innerHeight/2-e.clientY)/18;bottle.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`});
+window.addEventListener('deviceorientation',e=>{bottle.style.transform=`rotateY(${e.gamma/3}deg) rotateX(${e.beta/3}deg)`});
+const flavors=[{n:'RUBY',c:'linear-gradient(180deg,#ff1744,#9c1339)'},{n:'CITRUS',c:'linear-gradient(180deg,#ffee58,#f57f17)'},{n:'GRAPE',c:'linear-gradient(180deg,#7b1fa2,#311b92)'},{n:'AMBER',c:'linear-gradient(180deg,#ff9800,#e65100)'}];
+let i=0;setInterval(()=>{i=(i+1)%flavors.length;body.style.background=flavors[i].c;label.innerText=flavors[i].n;fizz.currentTime=0;fizz.play()},4500);
+for(let i=0;i<70;i++){const b=document.createElement('div');b.className='bubble';b.style.left=Math.random()*100+'vw';b.style.animationDuration=6+Math.random()*12+'s';document.body.appendChild(b)}
+</script>
+
+</body>
+</html>
